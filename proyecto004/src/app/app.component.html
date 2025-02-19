@@ -1,0 +1,21 @@
+<div class="row  justify-content-center ">
+  <div class="col-5 d-flex justify-content-center flex-column">
+    <div class="container bg-primary-subtle">
+      <h3 class="text-center">Este es el juego de los dados</h3>
+    </div>
+    <div class="row mt-3 ">
+
+      <app-dado class="col-md-4 text-center" [valor]="valor1"></app-dado>
+      <app-dado class="col-md-4 text-center" [valor]="valor2"></app-dado>
+      <app-dado class="col-md-4 text-center" [valor]="valor3"></app-dado>
+    </div>
+    <hr>
+    <div *ngIf="resultado == 'Has perdido'; else ganado" class="bg-danger text-white text-center">{{resultado}}</div>
+    
+    <ng-template #ganado>
+      <div class="bg-success text-white text-center">{{resultado}}</div>
+    </ng-template>
+
+    <button class="bg-success mt-2 rounded" (click)="lanzarDados()">Lanzar</button>
+  </div>
+</div>
