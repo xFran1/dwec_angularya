@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-dado',
   standalone: false,
@@ -12,6 +14,10 @@ import { Component, Input } from '@angular/core';
     
     @Input() valor:number = 1; 
     
+    getImageDado(){
+      return `images/dados${this.valor}.png`;
+    }
+
 }
     
 
